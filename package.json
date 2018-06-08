@@ -1,0 +1,23 @@
+{
+  "name": "task-skill-editor",
+  "version": "1.0.0",
+  "description": "Front-end challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jobbatical/task-skill-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jobbatical/task-skill-editor/issues"
+  },
+  "homepage": "https://github.com/Jobbatical/task-skill-editor#readme",
+  "devDependencies": {
+    "json-server": "^0.13.0"
+  }
+}
