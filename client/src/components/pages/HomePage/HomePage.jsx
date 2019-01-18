@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from '../../UI/atoms/Text';
+import Text from '../../UI/atoms/Text/Text'
 
 const HomePage = () => <Text fontSize="3.6rem">Hello Benny</Text>
 

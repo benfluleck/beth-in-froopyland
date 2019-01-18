@@ -14,17 +14,17 @@ const Text = ({
   fontWeight,
   children,
 }) => (
-    <Text.Container
-      fontSize={fontSize}
-      textAlign={textAlign}
-      color={color}
-      display={display}
-      uppercase={uppercase}
-      fontWeight={fontWeight}
-    >
-      {children}
-    </Text.Container>
-  )
+  <Text.Container
+    fontSize={fontSize}
+    textAlign={textAlign}
+    color={color}
+    display={display}
+    uppercase={uppercase}
+    fontWeight={fontWeight}
+  >
+    {children}
+  </Text.Container>
+)
 
 Text.propTypes = {
   children: PropTypes.string.isRequired,
@@ -52,4 +52,3 @@ Text.Container = styled.span`
 `
 
 export default Text
-
