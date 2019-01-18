@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-
+/**
+ * Text Component for Text and Titles
+ */
 const Text = ({
   fontSize,
   textAlign,
