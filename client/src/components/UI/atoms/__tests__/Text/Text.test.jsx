@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Text from '<atoms>/Text'
+import Text from '../../Text/Text'
 
 
 const setup = props => {
@@ -43,13 +43,15 @@ describe('Component - Text', () => {
 
       expect(wrapper.props().color).toEqual('#3c414d')
     })
-  })
-  test('should render correct content in uppercase', () => {
-    const { wrapper } = setup({ uppercase: true })
-    console.log(wrapper.debug())
+    test('for fontWeight', () => {
+      const { wrapper } = setup()
 
+      expect(wrapper.props().fontWeight).toEqual(500)
+    })
+    test('for textalign', () => {
+      const { wrapper } = setup()
+
+      expect(wrapper.props().textAlign).toEqual('center')
+    })
   })
 })
-
-
-

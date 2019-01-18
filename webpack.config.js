@@ -7,8 +7,6 @@ module.exports = env => {
     ? envConfig = require(`./webpack-build-utils/webpack.development`)
     : envConfig = require(`./webpack-build-utils/webpack.${env.mode}`)
 
-
-
   console.log(env)
   return webpackMerge({ mode: env.mode }, commonConfig, envConfig)
 }

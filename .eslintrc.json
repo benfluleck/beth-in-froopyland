@@ -1,12 +1,14 @@
 {
     "extends": [
         "standard",
-        "plugin:react/recommended",
-        "better-styled-components"
+        "plugin:react/recommended"
     ],
     "plugins": [
         "react"
     ],
+    "env": {
+        "jest": true
+    },
     "rules": {
         "react/jsx-filename-extension": [
             1,
@@ -24,7 +26,6 @@
         "comma-dangle": [
             "error",
             "always-multiline"
-        ],
-        "better-styled-components/sort-declarations-alphabetically": 2
+        ]
     }
 }
