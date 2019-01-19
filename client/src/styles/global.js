@@ -1,4 +1,9 @@
- html {
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Allerta')
+
+html {
     box-sizing: border-box;
     font-size: 62.5%;
   }
@@ -14,3 +19,5 @@ body {
     font-family: Allerta, Helvetica, Arial, sans-serif !important;
     font-size: 2.4rem;
   }
+`
+export default GlobalStyle

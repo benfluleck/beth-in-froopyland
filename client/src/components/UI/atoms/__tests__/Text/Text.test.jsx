@@ -1,24 +1,30 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Text from '../../Text/Text'
-
+import { renderWithTheme } from '<helpers>/testUtils'
+import Text from '<atoms>/Text/Text'
 
 const setup = props => {
   const defaultProps = {
     display: 'inline',
-    fontSize: '1.6rem',
+    fontSize: 'base',
     textAlign: 'center',
-    fontWeight: 500,
-    color: '#3c414d',
+    fontWeight: 'normal',
+    color: 'black',
   }
-  const wrapper = shallow(<Text {...defaultProps} {...props}>Test</Text>)
+
+  const text = (<Text {...defaultProps} {...props}>Test</Text>)
+
+  const wrapper = shallow(text)
+  const tree = renderWithTheme(text)
 
   return {
     wrapper,
-    container: wrapper.find(Text.Container)
+    tree,
+    container: wrapper.find(Text.Container),
   }
 }
 
+// Text Test Component
 describe('Component - Text', () => {
   test('should render', () => {
     const { wrapper } = setup()
@@ -26,6 +32,7 @@ describe('Component - Text', () => {
     expect(wrapper.exists()).toBeTruthy()
   })
 
+  // Props tests
   test('should have correct content', () => {
     const { wrapper } = setup()
 
@@ -41,17 +48,50 @@ describe('Component - Text', () => {
     test('for color', () => {
       const { wrapper } = setup()
 
-      expect(wrapper.props().color).toEqual('#3c414d')
+      expect(wrapper.props().color).toEqual('black')
     })
     test('for fontWeight', () => {
       const { wrapper } = setup()
 
-      expect(wrapper.props().fontWeight).toEqual(500)
+      expect(wrapper.props().fontWeight).toEqual('normal')
     })
     test('for textalign', () => {
       const { wrapper } = setup()
 
       expect(wrapper.props().textAlign).toEqual('center')
+    })
+  })
+
+  // Css tests
+  describe('should have correct fontWeight', () => {
+    test('by default', () => {
+      const { tree } = setup()
+
+      expect(tree).toHaveStyleRule('font-weight', '400')
+    })
+
+    test('when specified', () => {
+      const { tree } = setup({
+        fontWeight: 'bold',
+      })
+
+      expect(tree).toHaveStyleRule('font-weight', '700')
+    })
+  })
+
+  describe('should have correct text-transform', () => {
+    test('by default', () => {
+      const { tree } = setup()
+
+      expect(tree).toHaveStyleRule('text-transform', undefined)
+    })
+
+    test('when specified', () => {
+      const { tree } = setup({
+        uppercase: true,
+      })
+
+      expect(tree).toHaveStyleRule('text-transform', 'uppercase')
     })
   })
 })

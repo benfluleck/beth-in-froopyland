@@ -40,7 +40,10 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy",
-      "^<atoms>/(.*)$": "<rootDir>/client/src/components/UI/atoms/$1"
+      "^<atoms>/(.*)$": "<rootDir>/client/src/components/UI/atoms/$1",
+      "^<molecules>/(.*)$": "<rootDir>/client/src/components/UI/molecules/$1",
+      "^<helpers>/(.*)$": "<rootDir>/client/src/helpers/$1",
+      "^<fixtures>/(.*)$": "<rootDir>/client/src/fixtures/$1"
     }
   },
   "repository": {
@@ -71,6 +74,7 @@
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "react-styleguidist": "^8.0.6",
+    "react-test-renderer": "^16.7.0",
     "regenerator-runtime": "^0.13.1",
     "style-loader": "^0.23.1",
     "webpack-dev-server": "^3.1.14"

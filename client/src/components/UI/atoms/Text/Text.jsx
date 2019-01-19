@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { fontWeight, fontSize } from '../../../../styles/variables/fonts'
+import { textColors } from '../../../../styles/variables/colorPalette'
+
 /**
  * Text Component for Text and Titles
  */
@@ -29,11 +32,11 @@ const Text = ({
 Text.propTypes = {
   children: PropTypes.string.isRequired,
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
-  color: PropTypes.string,
-  fontSize: PropTypes.string,
+  color: PropTypes.oneOf(Object.keys(textColors)),
+  fontSize: PropTypes.oneOf(Object.keys(fontSize)),
   textAlign: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
   uppercase: PropTypes.bool,
-  fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  fontWeight: PropTypes.oneOf(Object.keys(fontWeight)),
 }
 
 Text.defaultProps = {
@@ -44,10 +47,10 @@ Text.defaultProps = {
 
 Text.Container = styled.span`
   text-align: ${props => props.textAlign};
-  color: ${props => props.color};
-  font-size: ${props => props.fontSize};
+  color: ${props => props.theme.textColors[props.color]};
+  font-size: ${props => props.theme.fontSize[props.fontSize]};
   display: ${props => props.display};
-  font-weight: ${props => props.fontWeight};
+  font-weight: ${props => props.theme.fontWeight[props.fontWeight]};
   ${props => props.uppercase && 'text-transform: uppercase'};
 `
 
