@@ -1,33 +1,38 @@
 import React from 'react'
-
 import { shallow } from 'enzyme'
-import Button from '../../Button/Button'
+
+import { renderWithTheme } from '<helpers>/testUtils'
+import Button from '<atoms>/Button/Button'
 
 const setup = props => {
   const defaultProps = {
     disabled: false,
-    padding: '5rem',
+    padding: 'md',
     onClick: () => { },
   }
-  const wrapper = shallow(
-    <Button {...defaultProps} {...props}>
-      Test button
-    </Button>
-  )
+  const button = (<Button {...defaultProps} {...props}>
+    Test button
+  </Button>)
+
+  const wrapper = shallow(button)
+
+  const tree = renderWithTheme(button)
 
   return {
     wrapper,
+    tree,
   }
 }
-
+// Button tests
 describe('Component - Button', () => {
   const { wrapper } = setup()
   test('should render', () => {
     expect(wrapper.exists()).toBeTruthy()
   })
 
+  // Prop tests
   test('should have padding', () => {
-    expect(wrapper.props().padding).toEqual('5rem')
+    expect(wrapper.props().padding).toEqual('md')
   })
 
   test('should have disabled prop set to false', () => {
@@ -48,5 +53,22 @@ describe('Component - Button', () => {
     wrapper.simulate('click')
 
     expect(onClick).toHaveBeenCalledTimes(1)
+  })
+
+  // Css Tests
+  describe('should render correct css propeties', () => {
+    const { tree } = setup()
+
+    test('for font size', () => {
+      expect(tree).toHaveStyleRule('font-size', '1.4rem')
+    })
+
+    test('for correct padding', () => {
+      expect(tree).toHaveStyleRule('padding', '0 3.2rem')
+    })
+
+    test('for correct color', () => {
+      expect(tree).toHaveStyleRule('color', '#FFFFFF')
+    })
   })
 })

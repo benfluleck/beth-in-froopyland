@@ -4,8 +4,8 @@ Text example:
 ```
 ```jsx
   <Text
-    fontSize="2.8rem"
-    fontWeight="600"
+    fontSize="md"
+    fontWeight="semiBold"
     uppercase={true}>
     This text is converted to uppercase
   </Text>

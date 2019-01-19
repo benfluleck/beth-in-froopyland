@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { spacing } from '../../../../styles/variables/spacing'
 
 /**
  * Button Component
@@ -23,45 +24,45 @@ const Button = ({
 
 Button.Container = styled.button`
   display: block;
-  font-size: 1.4rem;
-  padding: 0 ${props => props.padding};
+  font-size: ${props => props.theme.fontSize.base};
+  padding: 0 ${props => props.theme.spacing[props.padding]};
   cursor: ${props => (props.disabled ? 'default' : 'pointer')};
-  background: #0F2944;
-  color: #FFF;
-  height: 3.8rem;
-  border-radius: 0.4rem;
+  background: ${props => props.theme.buttonColors.primary};
+  color: ${props => props.theme.buttonColors.white};
+  height: ${props => props.theme.spacing.mdPlusBase};
+  border-radius: ${props => props.theme.spacing.xs};
 
   &:hover {
-     background-color: #6f7e8e;
-     border: 1px solid #6f7E8E;
+    background-color: ${props => props.theme.buttonColors.hover};
+    border: 1px solid ${props => props.theme.buttonColors.hover};
   }
 
   &:focus {
-      border: 1px solid #0F2944;
-      box-shadow: inset 0 0 0 1px black;
-      outline: 0;
+    border: 1px solid ${props => props.theme.buttonColors.black};
+    box-shadow: inset 0 0 0 1px ${props => props.theme.buttonColors.black};
+    outline: 0;
   }
 
   ${props => props.disabled &&
     css`
     &:disabled {
-      background-color: #E7E9EC;
-      color: #D7D6D9;
+      background-color: ${props => props.theme.buttonColors.disabled};
+      color: ${props => props.theme.buttonColors.disabledText};
       border: none;
       box-shadow: none;
     }`}
   }`
 
 Button.propTypes = {
-  padding: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  padding: PropTypes.oneOf(Object.keys(spacing)),
+  onClick: PropTypes.func,
   disabled: PropTypes.bool,
   children: PropTypes.string.isRequired,
 }
 
 Button.defaultProps = {
   disabled: false,
-  padding: '2.6rem',
+  padding: 'mdPlusXs',
 }
 
 export default Button
