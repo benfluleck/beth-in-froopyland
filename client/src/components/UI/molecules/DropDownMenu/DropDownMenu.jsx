@@ -52,7 +52,7 @@ DropDownMenu.OuterContainer = styled.div`
   border: 1px solid ${props => props.theme.buttonColors.primary};
   position: relative;
   display: block;
-  width: ${props => props.theme.spacing.xxxlMinusMd};
+  width: ${props => props.theme.spacing.inputWidth};
   height: ${props => props.theme.spacing.md};
   line-height: 3;
   overflow: hidden;

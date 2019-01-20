@@ -46,8 +46,8 @@ Button.Container = styled.button`
   ${props => props.disabled &&
     css`
     &:disabled {
-      background-color: ${props => props.theme.buttonColors.disabled};
-      color: ${props => props.theme.buttonColors.disabledText};
+      background-color: ${props => props.theme.buttonColors.grey};
+      color: ${props => props.theme.buttonColors.grey};
       border: none;
       box-shadow: none;
     }`}

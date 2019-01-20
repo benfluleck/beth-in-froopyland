@@ -6,7 +6,6 @@ import ButtonClose from '<atoms>/ButtonClose/ButtonClose'
 
 const setup = props => {
   const defaultProps = {
-    position: 'absolute',
     onClick: () => { },
   }
   const buttonClose = (<ButtonClose {...defaultProps} {...props} />)
@@ -29,23 +28,15 @@ describe('Component - ButtonClose', () => {
   })
 
   // Props Tests
-  describe('should have correct props', () => {
-    test('for position', () => {
-      const { wrapper } = setup()
-
-      expect(wrapper.props().position).toEqual('absolute')
+  test('should call onClick function after user clicks', () => {
+    const onClick = jest.fn()
+    const { wrapper } = setup({
+      onClick,
     })
 
-    test('should call onClick function after user clicks', () => {
-      const onClick = jest.fn()
-      const { wrapper } = setup({
-        onClick,
-      })
+    wrapper.simulate('click')
 
-      wrapper.simulate('click')
-
-      expect(onClick).toHaveBeenCalledTimes(1)
-    })
+    expect(onClick).toHaveBeenCalledTimes(1)
   })
 
   // Css Tests

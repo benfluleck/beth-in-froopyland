@@ -1,6 +1,6 @@
 import { spacing } from './variables/spacing'
 import { fontSize, fontWeight } from './variables/fonts'
-import { buttonColors, textColors } from './variables/colorPalette'
+import { buttonColors, textColors, backgroundColors } from './variables/colorPalette'
 
 export default {
   spacing,
@@ -8,4 +8,5 @@ export default {
   fontWeight,
   buttonColors,
   textColors,
+  backgroundColors,
 }

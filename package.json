@@ -42,6 +42,7 @@
       "\\.(css|less)$": "identity-obj-proxy",
       "^<atoms>/(.*)$": "<rootDir>/client/src/components/UI/atoms/$1",
       "^<molecules>/(.*)$": "<rootDir>/client/src/components/UI/molecules/$1",
+      "^<organisms>/(.*)$": "<rootDir>/client/src/components/UI/organisms/$1",
       "^<helpers>/(.*)$": "<rootDir>/client/src/helpers/$1",
       "^<fixtures>/(.*)$": "<rootDir>/client/src/fixtures/$1"
     }
