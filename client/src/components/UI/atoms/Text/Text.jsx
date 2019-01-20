@@ -30,7 +30,7 @@ const Text = ({
 )
 
 Text.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
   color: PropTypes.oneOf(Object.keys(textColors)),
   fontSize: PropTypes.oneOf(Object.keys(fontSize)),

@@ -2,13 +2,13 @@ Text Input example:
 ```jsx
   <TextInput
     placeholder="Test"
-    inputWidth="xxxlMinusMdPlusXs"
+    inputWidth="inputWidth"
   />
 ```
 ```jsx
   <TextInput
     placeholder="Default"
     value="Default"
-    inputWidth="xxxlMinusMdPlusXs"
+    inputWidth="inputWidth"
   />
 ```
