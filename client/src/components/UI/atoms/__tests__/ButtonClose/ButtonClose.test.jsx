@@ -6,9 +6,9 @@ import ButtonClose from '<atoms>/ButtonClose/ButtonClose'
 
 const setup = props => {
   const defaultProps = {
-    onClick: () => { },
+    onClick: () => {},
   }
-  const buttonClose = (<ButtonClose {...defaultProps} {...props} />)
+  const buttonClose = <ButtonClose {...defaultProps} {...props} />
 
   const wrapper = shallow(buttonClose)
 

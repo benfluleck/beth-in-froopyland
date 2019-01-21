@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 /**
+ * @description- Button Close Component used to Delete
+ *
+ * @prop {func} onclick - onClick
+ * @returns {JSX} - Button Close Component
+ *
  * ButtonClose Component
  */
 const ButtonClose = ({ onClick }) => (
-  <ButtonClose.Container
-    onClick={onClick}
-  >
-    ×
-  </ButtonClose.Container>
+  <ButtonClose.Container onClick={onClick}>×</ButtonClose.Container>
 )
 
 ButtonClose.propTypes = {
@@ -18,7 +19,7 @@ ButtonClose.propTypes = {
 }
 
 ButtonClose.defaultProps = {
-  onClick: () => { },
+  onClick: () => {},
 }
 
 ButtonClose.Container = styled.div`

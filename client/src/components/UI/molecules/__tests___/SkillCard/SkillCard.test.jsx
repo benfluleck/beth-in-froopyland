@@ -15,7 +15,7 @@ const setup = props => {
     onDelete: jest.fn(),
   }
 
-  const skillCardWrapper = (<SkillCard {...defaulfProps} {...props} />)
+  const skillCardWrapper = <SkillCard {...defaulfProps} {...props} />
   const wrapper = shallow(skillCardWrapper)
 
   return {

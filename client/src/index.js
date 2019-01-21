@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import styled from 'styled-components'
@@ -9,20 +9,16 @@ import ThemeWrapper from './styles/ThemeWrapper/themeWrapper'
 
 const App = () => (
   <ThemeWrapper>
-    <GlobalStyle />
-    <App.Container>
+    <Fragment>
+      <GlobalStyle />
       <Router>
         <BaseRoute />
       </Router>
-    </App.Container>
+    </Fragment>
   </ThemeWrapper>
 )
 
-App.Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+App.Container = styled.div``
 
 export default App
 render(<App />, document.getElementById('app'))

@@ -6,10 +6,7 @@ import PropTypes from 'prop-types'
  * Select Option Component
  */
 const SelectOption = ({ value, name }) => (
-  <SelectOption.Container
-    value={value}>
-    {name}
-  </SelectOption.Container>
+  <SelectOption.Container value={value}>{name}</SelectOption.Container>
 )
 
 SelectOption.Container = styled.option``

@@ -6,6 +6,13 @@ import Text from '../../atoms/Text/Text'
 import ButtonClose from '../../atoms/ButtonClose/ButtonClose'
 
 /**
+ * @description - SkillCard component
+ * @prop {number} index - index
+ * @prop {string} experience - experience
+ * @prop {func} onDelete - Delete function
+ * @prop {bool} isTopSkill - Is it a top 5 Skill
+ *
+ * @returns {JSX} - SkillCard Component
  * SkillCard Component
  */
 const SkillCard = ({ index, skillTitle, experience, isTopSkill, onDelete }) => (
@@ -14,20 +21,13 @@ const SkillCard = ({ index, skillTitle, experience, isTopSkill, onDelete }) => (
       <Text color="white">{index}</Text>
     </SkillCard.SiderBar>
     <SkillCard.ContentSection>
-      <Text
-        fontWeight="semiBold"
-        color="primary"
-      >
+      <Text fontWeight="semiBold" color="primary">
         {skillTitle}
       </Text>
       <SkillCard.ButtonClose>
-        <ButtonClose onClick={onDelete} />
+        <ButtonClose onClick={() => onDelete(index)} />
       </SkillCard.ButtonClose>
-      <Text
-        fontWeight="normal"
-        color="grey"
-        fontSize="sm"
-      >
+      <Text fontWeight="normal" color="grey" fontSize="sm">
         {experience}
       </Text>
     </SkillCard.ContentSection>
@@ -38,10 +38,10 @@ export default SkillCard
 
 SkillCard.Container = styled.div`
   position: relative;
-  min-width: ${props => props.theme.spacing.xlPlusBase};
+  min-width: ${props => props.theme.spacing.xxxl};
   padding-right: ${props => props.theme.spacing.smPlusBasePlusxs};
   min-height: ${props => props.theme.spacing.mdPlusSmPlusXs};
-  box-shadow: 0px 2px 18px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 18px -4px rgba(0, 0, 0, 0.75);
   background-color: ${props => props.theme.buttonColors.white};
   margin: ${props => props.theme.spacing.xs};
   display: flex;
@@ -51,7 +51,7 @@ SkillCard.Container = styled.div`
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
   }
 
-   @media (max-width: 74rem) {
+  @media (max-width: 74rem) {
     margin: 0;
     box-shadow: none;
     border: 1px solid ${props => props.theme.buttonColors.grey};
@@ -60,15 +60,16 @@ SkillCard.Container = styled.div`
 `
 
 SkillCard.SiderBar = styled.div`
-  width: ${props => props.theme.spacing.sm};
   background-color: ${props =>
-    props.isTopSkill ? props.theme.buttonColors.primary
+    props.isTopSkill
+      ? props.theme.buttonColors.primary
       : props.theme.buttonColors.hover};
   padding-top: ${props => props.theme.spacing.xs};
+  padding: ${props => props.theme.spacing.xxs};
   display: flex;
   justify-content: center;
 
-   ${SkillCard.Container}:hover & {
+  ${SkillCard.Container}:hover & {
     background-color: ${props => props.theme.buttonColors.teal};
   }
 `

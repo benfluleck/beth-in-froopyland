@@ -13,7 +13,7 @@ const setup = props => {
     onDelete: jest.fn(),
   }
 
-  const skillCardsListWrapper = (<SkillCardsList {...defaulfProps} {...props} />)
+  const skillCardsListWrapper = <SkillCardsList {...defaulfProps} {...props} />
   const wrapper = shallow(skillCardsListWrapper)
 
   return {
@@ -37,7 +37,9 @@ describe('Component - SkillCardsList', () => {
     })
 
     test('first SkillCard component with text number 1', () => {
-      expect(skillCardsListWrapper.first().props().skillTitle).toEqual('Express JS')
+      expect(skillCardsListWrapper.first().props().skillTitle).toEqual(
+        'Express JS'
+      )
     })
 
     describe('should props for first skill card', () => {

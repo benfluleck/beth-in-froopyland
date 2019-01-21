@@ -8,7 +8,7 @@ const setup = props => {
     name: 'Test Name',
     value: 'testValue',
   }
-  const selectOption = (<SelectOption {...defaultProps} {...props} />)
+  const selectOption = <SelectOption {...defaultProps} {...props} />
 
   const wrapper = shallow(selectOption)
 
