@@ -6,25 +6,31 @@ import SkillCard from '../../molecules/SkillCard/SkillCard'
 
 const TOP_SKILLS_LENGTH = 5
 
+/***
+ * @description - This component displays all the skill cards
+ *
+ * @prop {array} cards - index, skillTitle, experience
+ * @prop {func} onDelete - onDelete function
+ *
+ * @returns {JSX} SkillCardsList Component
+ */
 const SkillCardsList = ({ cards, onDelete }) => {
   const renderCards = cards.map((card, index) => {
     const newIndex = index + 1
-    const isTopSkill = newIndex && (newIndex <= TOP_SKILLS_LENGTH)
-    return (<SkillCard
-      key={`${index}+${card.skillTitle}`}
-      index={card.index}
-      skillTitle={card.skillTitle}
-      experience={card.experience}
-      isTopSkill={isTopSkill}
-      onDelete={onDelete}
-    />)
+    const isTopSkill = newIndex && newIndex <= TOP_SKILLS_LENGTH
+    return (
+      <SkillCard
+        key={`${index}+${card.skillTitle}`}
+        index={card.id}
+        skillTitle={card.name}
+        experience={card.experience}
+        isTopSkill={isTopSkill}
+        onDelete={onDelete}
+      />
+    )
   })
 
-  return (
-    <SkillCardsList.Container>
-      {renderCards}
-    </SkillCardsList.Container>
-  )
+  return <SkillCardsList.Container>{renderCards}</SkillCardsList.Container>
 }
 
 SkillCardsList.Container = styled.div`
@@ -32,6 +38,7 @@ SkillCardsList.Container = styled.div`
   display: flex;
   flex-flow: row wrap;
   padding: ${props => props.theme.spacing.smPlusXs};
+  margin-top: ${props => props.theme.spacing.smPlusXs};
 `
 
 SkillCardsList.propTypes = {

@@ -3,21 +3,30 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 import SelectOption from '../../atoms/SelectOption/SelectOption'
-
+/**
+ * @description - DropDown Menu component
+ *
+ * @prop {func} onChange - onChange event
+ * @prop {array} items - name, value
+ *
+ * @returns {JSX} - DropDownMEn Component
+ */
 const DropDownMenu = ({ items, onChange }) => {
-  const renderSelectOptions = items.map((item, index) =>
+  const renderSelectOptions = items.map((item, index) => (
     <SelectOption
       key={`${index}+${item.name}`}
       name={item.name}
       value={item.value}
-    >
-    </SelectOption>)
+    />
+  ))
 
-  return (<DropDownMenu.OuterContainer onChange={onChange}>
-    <DropDownMenu.Container>
-      {renderSelectOptions}
-    </DropDownMenu.Container>
-  </DropDownMenu.OuterContainer>
+  return (
+    <DropDownMenu.OuterContainer onChange={onChange}>
+      <DropDownMenu.Container>
+        <SelectOption name="Experience" value="Experience" />
+        {renderSelectOptions}
+      </DropDownMenu.Container>
+    </DropDownMenu.OuterContainer>
   )
 }
 
@@ -36,7 +45,7 @@ DropDownMenu.propTypes = {
 DropDownMenu.Container = styled.select`
   border: none;
   background: transparent;
-  font-size: ${props => props.theme.spacing.sm};
+  font-size: ${props => props.theme.fontSize.base};
   width: 100%;
   height: 100%;
   margin: 0;
@@ -45,18 +54,18 @@ DropDownMenu.Container = styled.select`
   appearance: none;
 
   &:focus {
-    outline: none
-  }`
+    outline: none;
+  }
+`
 
 DropDownMenu.OuterContainer = styled.div`
   border: 1px solid ${props => props.theme.buttonColors.primary};
   position: relative;
   display: block;
-  width: ${props => props.theme.spacing.inputWidth};
-  height: ${props => props.theme.spacing.md};
+  width: 30%;
   line-height: 3;
   overflow: hidden;
-  border-radius: ${props => props.theme.spacing.xs};;
+  border-radius: ${props => props.theme.spacing.xxs};
 
   &:after {
     content: '\\25BC';
@@ -66,5 +75,9 @@ DropDownMenu.OuterContainer = styled.div`
     bottom: 0;
     padding: 0 1em;
     pointer-events: none;
+  }
+
+  @media (max-width: 74rem) {
+    width: 70%;
   }
 `

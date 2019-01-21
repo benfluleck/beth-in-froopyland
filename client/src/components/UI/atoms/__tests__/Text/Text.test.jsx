@@ -12,7 +12,11 @@ const setup = props => {
     color: 'black',
   }
 
-  const text = (<Text {...defaultProps} {...props}>Test</Text>)
+  const text = (
+    <Text {...defaultProps} {...props}>
+      Test
+    </Text>
+  )
 
   const wrapper = shallow(text)
   const tree = renderWithTheme(text)

@@ -6,6 +6,16 @@ import { fontWeight, fontSize } from '../../../../styles/variables/fonts'
 import { textColors } from '../../../../styles/variables/colorPalette'
 
 /**
+ * @description - Text Component
+ *
+ * @prop {string} fontSize - font Size
+ * @prop {string} textAlign - text Align
+ * @prop {string} color - color
+ * @prop {string} display - display
+ * @prop {bool} uppercase - upperCase
+ * @prop {string} fontWeight - fontWeight
+ * @prop {children} children- children
+ *
  * Text Component for Text and Titles
  */
 const Text = ({
@@ -17,6 +27,7 @@ const Text = ({
   fontWeight,
   children,
 }) => (
+
   <Text.Container
     fontSize={fontSize}
     textAlign={textAlign}
@@ -30,7 +41,8 @@ const Text = ({
 )
 
 Text.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
   color: PropTypes.oneOf(Object.keys(textColors)),
   fontSize: PropTypes.oneOf(Object.keys(fontSize)),

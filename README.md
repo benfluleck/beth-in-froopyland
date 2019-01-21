@@ -1,52 +1,3 @@
-Front-end challenge
-===================
-
-Your goal is to design a responsive skill editor React component. Design for the task is provided [in Invision](https://invis.io/M6KHQTYEQ4D).
-
-There are three screens in this prototype: Desktop view, Mobile view and Different form states.
-
-A mock API server with seed data is provided in this repo - run that by `npm run api`. `/skills` endpoint accepts basic CRUD operations. More information in [`json-server` repo](https://github.com/typicode/json-server).
-
-## Implementation instructions
-
-- Skills have a minimum length of 4 characters and a maximum length of 255 characters;
-- Responsiveness of the UI is mandatory;
-- The dropdown menu can be a simple browser default HTML select-option component. _No need for custom dropdowns_;
-- UI doesn't need to be pixel-perfect. Your UI should look nice and have a similar user experience to that described in the design;
-- Add skills and delete skills functionality are mandatory.
-
-## Submission instructions
-
-- Use any platform to host the git repo for the project and share the URL with us. Use your preferred git flow. Make the commit messages meaningful on master branch;
-- Don't name the project with straightforward names like `front-end-challenge-jobbatical`. Create a random one for the project, such as `thanos-on-fire`, `summer-is-here`;
-- In the `README.md` file, give us instructions to run the project, share details you want us to know before looking at your solution.
-
-## Preferred technology stack
-
-- React,
-- Redux and its supporting libraries (redux-thunk or redux-saga, etc.),
-- SCSS/LESS,
-- Webpack (production build, dev setup),
-- font-awesome or similar icon library if needed,
-- Lodash if needed,
-- Testing (Jest/Mocha/Chai/Enzyme).
-
-Remarks:
-
-- Babel (ES6, ES7. Don't use ES5 syntax),
-- Prefer promises, async/await is OK,
-- Eslint/Prettier (for code linting),
-- Do **not** use jQuery or any similar library.
-
-## Evaluation criteria (in order of importance)
-
-- Code organisation (React application structure),
-- Code readability (including comments),
-- Commit history - structure and quality,
-- Responsiveness and UI behaviour,
-- Adherence to the tech stack described above,
-- Completeness,
-- Test coverage.
 
 ## README file Instructions
 
@@ -54,3 +5,57 @@ Remarks:
 - How long did it take you to finish it?
 - What would you have done if time permitted?
 - Don't provide any data related to the task which is searchable easily through web search (eg., `jobbatical front end` or similar search shouldn't list your task repo in Github).
+
+<br />
+<br />
+
+<img width="1440" alt="Phone-number-generator-screenshot" src="./images/homepage.png">
+
+
+# Table of Contents
+
+- [Getting Started](#getting-started)
+- [Testing](#testing)
+- [StyleGuide](#styleguide)
+- [Timeline](#timeline)
+- [What would I do with More Time](#what-would-I-do-with-more-time)
+
+## Getting Started
+This is a javascript application built with React JS on the frontend. It has a backend json-server which mocks a server.
+
+1. Install [**Node JS**](https://nodejs.org/en/).
+
+2. Clone the [**repository here**](https://github.com/benfluleck/random-phone-number-generator)
+3. [**cd**] into the root of the **project directory**.
+4. Run `npm install` on the terminal to install project dependecies
+
+5. Start the application:
+
+**Development**
+
+`npm run api`
+
+`npm run client:dev`
+
+**Don't forget to start the server on another terminal before npm run api**
+
+## Testing
+
+Client side tests - Run `npm run test` on the terminal while within the **project root directory**.
+
+Client side testing is achieved through the use of `jest` package. `jest` is used to test javascript code in
+React applications.
+
+## StyleGuide
+
+I have implemented react-style guide which helped with developing my UI components as I feel these are essential on any project.
+
+You can launch this with `npm run styleguide`
+
+## Timeline
+I started set up this application on Thursday 17th January, 2019 but unfortunately due to work commitments I was only able to start properly on Friday 18th.
+
+## What would I do with More Time
+- I would have implemented more tests
+- The plan i to try and implement a molecule for the TextInputField to include and Error message to help with returning different validations errors
+- I would have abstracted all the code on the `HomePage.jsx` dealing with state

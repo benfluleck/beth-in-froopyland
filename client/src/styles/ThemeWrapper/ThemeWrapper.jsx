@@ -7,9 +7,7 @@ import mainTheme from '../mainTheme'
 class ThemeWrapper extends Component {
   render () {
     return (
-      <ThemeProvider theme={mainTheme}>
-        {this.props.children}
-      </ThemeProvider>
+      <ThemeProvider theme={mainTheme}>{this.props.children}</ThemeProvider>
     )
   }
 }

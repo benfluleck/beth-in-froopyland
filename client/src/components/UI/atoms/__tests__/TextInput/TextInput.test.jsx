@@ -8,10 +8,10 @@ const setup = props => {
   const defaultProps = {
     placeholder: 'Message',
     value: 'Jobbatical',
-    onChange: () => { },
-    inputWidth: 'xxl',
+    onChange: () => {},
+    inputWidth: 'xl',
   }
-  const textInput = (<TextInput {...defaultProps} {...props} />)
+  const textInput = <TextInput {...defaultProps} {...props} />
 
   return {
     wrapper: shallow(textInput),

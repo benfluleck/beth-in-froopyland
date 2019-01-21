@@ -16,6 +16,9 @@ module.exports = {
     },
   ],
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'client/src/styles/ThemeWrapper/ThemeWrapper'),
+    Wrapper: path.join(
+      __dirname,
+      'client/src/styles/ThemeWrapper/ThemeWrapper'
+    ),
   },
 }

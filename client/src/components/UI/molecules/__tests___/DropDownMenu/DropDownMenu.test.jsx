@@ -12,7 +12,7 @@ const setup = props => {
     onChange: jest.fn(),
   }
 
-  const dropDownWrapper = (<DropdownMenu {...defaulfProps} {...props} />)
+  const dropDownWrapper = <DropdownMenu {...defaulfProps} {...props} />
   const wrapper = shallow(dropDownWrapper)
 
   return {
@@ -34,13 +34,13 @@ describe('Component - DropDownMenu', () => {
     test('3 for Select Option', () => {
       const { selectOptions } = setup()
 
-      expect(selectOptions).toHaveLength(3)
+      expect(selectOptions).toHaveLength(4)
     })
 
     test('first Select Option component text', () => {
       const { selectOptions } = setup()
 
-      expect(selectOptions.first().props().name).toEqual('Jobbatical')
+      expect(selectOptions.first().props().name).toEqual('Experience')
     })
   })
 
@@ -49,11 +49,11 @@ describe('Component - DropDownMenu', () => {
     const { tree } = setup()
 
     test('for font size', () => {
-      expect(tree).toHaveStyleRule('width', '22.4rem')
+      expect(tree).toHaveStyleRule('width', '30%')
     })
 
     test('for correct padding', () => {
-      expect(tree).toHaveStyleRule('border-radius', '.4rem')
+      expect(tree).toHaveStyleRule('border-radius', '.2rem')
     })
   })
 })

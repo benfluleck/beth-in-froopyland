@@ -3,39 +3,39 @@ SkillCardsList example:
   <SkillCardsList
     cards={[
         {
-          index: 1,
-          skillTitle:"Express JS",
+          id: 1,
+          name:"Express JS",
           experience:"1 year",
         },
         {
-          index:2,
-          skillTitle:"Express JS",
+          id:2,
+          name:"Express JS",
           experience:"1 year",
         },
         {
-          index:3,
-          skillTitle:"Java ",
+          id:3,
+          name:"Java ",
           experience:"1 year",
         },
         {
-          index:4,
-          skillTitle:"Java ",
+          id:4,
+          name:"Java ",
           experience:"1 year",
         },
         {
-          index:5,
-          skillTitle:"Java ",
+          id:5,
+          name:"Java ",
           experience:"1 year",
         },
         {
-          index:6,
-          skillTitle:"User Interface Design",
+          id:6,
+          name:"User Interface Design",
           experience:"1 year",
 
         },
         {
-          index:7,
-          skillTitle:"Product Managment ",
+          id:7,
+          name:"Product Managment ",
           experience:"1 year",
 
         }

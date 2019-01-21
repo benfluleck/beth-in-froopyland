@@ -5,15 +5,20 @@ import PropTypes from 'prop-types'
 import { spacing } from '../../../../styles/variables/spacing'
 
 /**
+ * @description - Text Input component
+ *
+ * @prop {string} - placeholder
+ * @prop {string | number} - value
+ * @prop {bool} - isError
+ * @prop {func} - onChange
+ * @prop {string} - inputWidth
+ *
+ * @returns {JSX} - TextInput Component
+ *
  * TextInput Component
  */
-const TextInput = ({
-  value,
-  placeholder,
-  isError,
-  onChange,
-  inputWidth,
-}) => (
+const TextInput = ({ value, placeholder, isError, onChange, inputWidth }) => (
+/** TODO Add Error Message Field and Text or possible a molecule */
   <TextInput.Container
     type="text"
     placeholder={placeholder}
@@ -28,11 +33,12 @@ TextInput.Container = styled.input`
   background-color: transparent;
   outline: none;
   text-align: left;
-  width: ${props => props.inputWidth || '100%'};
+  width: ${props => props.inputWidth || '45%'};
   border: 1px solid ${props => props.theme.buttonColors.primary};
   transition: border 0.5s;
   font-size: 1.2rem;
-  padding: ${props => props.theme.spacing.basePlusXs} ${props => props.theme.spacing.basePlusXs};
+  padding: ${props => props.theme.spacing.basePlusXs} ${props =>
+  props.theme.spacing.basePlusXs};
   ::-webkit-input-placeholder {
     ${() => TextInput.placeholderColor};
   }
@@ -61,15 +67,17 @@ TextInput.Container = styled.input`
   }
 
   ${TextInput.defaultStyles}
-  ${props =>
-    props.isError &&
-    TextInput.errorStyles(
-    )}
+  ${props => props.isError && TextInput.errorStyles()}
+
+  @media (max-width: 74rem) {
+    width: 100%
+    margin-bottom: ${props => props.theme.spacing.sm};
+  }
 `
 
 TextInput.placeholderColor = css`
   transition: color 0.4s;
-  color: #BDBDBD;
+  color: #bdbdbd;
 `
 
 TextInput.defaultStyles = () => css`
@@ -100,7 +108,7 @@ TextInput.defaultProps = {
   type: 'text',
   required: true,
   isError: false,
-  onChange: () => { },
+  onChange: () => {},
 }
 
 export default TextInput

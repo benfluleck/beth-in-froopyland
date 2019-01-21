@@ -8,11 +8,13 @@ const setup = props => {
   const defaultProps = {
     disabled: false,
     padding: 'md',
-    onClick: () => { },
+    onClick: () => {},
   }
-  const button = (<Button {...defaultProps} {...props}>
-    Test button
-  </Button>)
+  const button = (
+    <Button {...defaultProps} {...props}>
+      Test button
+    </Button>
+  )
 
   const wrapper = shallow(button)
 
@@ -60,7 +62,7 @@ describe('Component - Button', () => {
     const { tree } = setup()
 
     test('for font size', () => {
-      expect(tree).toHaveStyleRule('font-size', '1.4rem')
+      expect(tree).toHaveStyleRule('font-size', '1rem')
     })
 
     test('for correct padding', () => {

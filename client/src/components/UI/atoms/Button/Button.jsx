@@ -4,14 +4,15 @@ import styled, { css } from 'styled-components'
 import { spacing } from '../../../../styles/variables/spacing'
 
 /**
+ * @description - Button Component
+ *
+ * @prop {string} padding - padding
+ * @prop {func} onClick - onClick
+ * @prop {bool} disabled - disabled
+ *
  * Button Component
  */
-const Button = ({
-  disabled,
-  onClick,
-  children,
-  padding,
-}) => (
+const Button = ({ disabled, onClick, children, padding }) => (
   <Button.Container
     tabIndex="0"
     padding={padding}
@@ -24,13 +25,17 @@ const Button = ({
 
 Button.Container = styled.button`
   display: block;
-  font-size: ${props => props.theme.fontSize.base};
+  font-size: ${props => props.theme.fontSize.sm};
   padding: 0 ${props => props.theme.spacing[props.padding]};
   cursor: ${props => (props.disabled ? 'default' : 'pointer')};
   background: ${props => props.theme.buttonColors.primary};
   color: ${props => props.theme.buttonColors.white};
-  height: ${props => props.theme.spacing.mdPlusBase};
   border-radius: ${props => props.theme.spacing.xs};
+
+  @media (max-width: 74rem) {
+    width: 30%;
+    padding: 0;
+  }
 
   &:hover {
     background-color: ${props => props.theme.buttonColors.hover};
@@ -43,14 +48,16 @@ Button.Container = styled.button`
     outline: 0;
   }
 
-  ${props => props.disabled &&
+  ${props =>
+    props.disabled &&
     css`
-    &:disabled {
-      background-color: ${props => props.theme.buttonColors.grey};
-      color: ${props => props.theme.buttonColors.grey};
-      border: none;
-      box-shadow: none;
-    }`}
+      &:disabled {
+        background-color: ${props => props.theme.buttonColors.grey};
+        color: ${props => props.theme.buttonColors.disabledText};
+        border: none;
+        box-shadow: none;
+      }
+    `}
   }`
 
 Button.propTypes = {
