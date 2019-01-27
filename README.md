@@ -57,6 +57,5 @@ I started set up this application on Thursday 17th January, 2019 but unfortunate
 
 ## What would I do with More Time
 - I would have implemented more tests
-- The plan i to try and implement a molecule for the TextInputField to include and Error message to help with returning different validations errors
 - I would have abstracted all the code on the `HomePage.jsx` dealing with state
 - I really need to implement pagination
