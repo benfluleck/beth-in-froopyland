@@ -6,6 +6,7 @@ import AddSkillsSection from './sections/skills/AddSkillsSection'
 import api from '../../../api/api'
 import { SkillsListSection } from './sections/skills/SkillsListSection'
 import SpinLoader from '../../UI/atoms/SpinLoader/SpinLoader'
+import { useSkillReducer } from './hooks/useSkill'
 
 /***
  * @description - Home Page of the application
@@ -14,9 +15,7 @@ import SpinLoader from '../../UI/atoms/SpinLoader/SpinLoader'
  */
 const HomePage = () => {
   const [skills, getSkills] = useState([])
-  const [name, getName] = useState('')
-  const [isError, setError] = useState(false)
-  const [experience, getExperience] = useState('')
+  const { name, experience, errorMessage, dispatchSkillState } = useSkillReducer()
 
   /**
    * @description - useEffect executes on
@@ -30,19 +29,31 @@ const HomePage = () => {
         .then(response => getSkills(response.data))
         .catch(err => console.log(err))
     },
-    [skills]
+    [skills.length]
   )
 
   const addSkill = () => {
-    if (!name || name.length < 4) {
-      setError(true)
+    if (!name || name.length <= 4 || name.length > 255) {
+      dispatchSkillState({
+        type: 'SET_ERROR_MESSAGE',
+        errorMessage: 'Please Enter a Topic of more than 4 charactes',
+      })
       return
     }
+
+    if (experience === 'Experience' || !experience) {
+      dispatchSkillState({
+        type: 'SET_ERROR_MESSAGE',
+        errorMessage: 'Please Select an Experience level',
+      })
+      return
+    }
+
     api.addSkillsToApi({
       name,
       experience,
     })
-    getName('')
+    dispatchSkillState({ type: 'INITIALIZE' })
   }
 
   const deleteSkill = id => {
@@ -50,12 +61,13 @@ const HomePage = () => {
   }
 
   const onChange = e => {
-    setError(false)
-    getName(e.target.value)
+    const name = e.target.value
+    dispatchSkillState({ type: 'SET_NAME', name })
   }
 
   const onSelectedChange = e => {
-    getExperience(e.target.value)
+    const experience = e.target.value
+    dispatchSkillState({ type: 'SET_EXPERIENCE', experience })
   }
 
   return (
@@ -65,7 +77,8 @@ const HomePage = () => {
         name={name}
         onSelectedChange={onSelectedChange}
         onChange={onChange}
-        isError={isError}
+        showError={!name || name.length < 4 || Boolean(errorMessage)}
+        errorMessage={errorMessage}
         addSkill={addSkill}
       />
       {skills.length ? (

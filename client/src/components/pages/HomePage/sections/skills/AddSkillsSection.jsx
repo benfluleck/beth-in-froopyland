@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import TextInput from '../../../../UI/atoms/TextInput/TextInput'
+import InputTextField from '../../../../UI/molecules/InputTextField/InputTextField'
 import DropDownMenu from '../../../../UI/molecules/DropDownMenu/DropDownMenu'
 import Button from '../../../../UI/atoms/Button/Button'
 import exprienceItems from '../../../../../fixtures/experienceItems'
@@ -17,16 +17,18 @@ import exprienceItems from '../../../../../fixtures/experienceItems'
  */
 const AddSkillsSection = ({
   name,
-  isError,
+  showError,
   onChange,
   addSkill,
   onSelectedChange,
+  errorMessage,
 }) => (
   <AddSkillsSection.Container>
-    <TextInput
+    <InputTextField
       value={name}
       onChange={onChange}
-      isError={isError}
+      showError={showError}
+      errorMessage={errorMessage}
       placeholder="Node Js, Postgres, React etc"
     />
     <DropDownMenu items={exprienceItems} onChange={onSelectedChange} />
@@ -46,6 +48,7 @@ AddSkillsSection.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   addSkill: PropTypes.func,
-  isError: PropTypes.bool,
+  showError: PropTypes.bool,
+  errorMessage: PropTypes.string,
   onSelectedChange: PropTypes.func,
 }

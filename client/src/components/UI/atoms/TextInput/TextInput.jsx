@@ -33,7 +33,7 @@ TextInput.Container = styled.input`
   background-color: transparent;
   outline: none;
   text-align: left;
-  width: ${props => props.inputWidth || '45%'};
+  width: ${props => props.inputWidth || '100%'};
   border: 1px solid ${props => props.theme.buttonColors.primary};
   transition: border 0.5s;
   font-size: 1.2rem;
@@ -70,8 +70,7 @@ TextInput.Container = styled.input`
   ${props => props.isError && TextInput.errorStyles()}
 
   @media (max-width: 74rem) {
-    width: 100%
-    margin-bottom: ${props => props.theme.spacing.sm};
+    margin-bottom: ${props => props.theme.spacing.base};
   }
 `
 
