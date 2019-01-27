@@ -21,7 +21,7 @@
 - [What would I do with More Time](#what-would-I-do-with-more-time)
 
 ## Getting Started
-This is a javascript application built with React JS on the frontend. It has a backend json-server which mocks a server.
+This is a javascript application built with React JS on the frontend. It has a backend json-server which mocks a server which has stores a list of skills.
 
 1. Install [**Node JS**](https://nodejs.org/en/).
 
