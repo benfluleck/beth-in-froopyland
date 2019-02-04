@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -32,8 +32,7 @@ const InputTextField = ({
         placeholder={placeholder}
         value={value}
         isError={showError && errorMessage !== null}
-        onChange={onChange}
-      />
+        onChange={onChange} />
       {showError && errorMessage && <Text color="red" fontSize="sm" padding="xxs" >{errorMessage}</Text>}
     </InputTextField.InnerContainer>
 
