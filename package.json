@@ -35,6 +35,9 @@
       "text",
       "html"
     ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/client/src/components/UI/atoms/SpinLoader"
+    ],
     "collectCoverageFrom": [
       "client/src/**/*.{jsx}"
     ],

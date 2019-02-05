@@ -53,9 +53,12 @@ I have implemented react-style guide which helped with developing my UI componen
 You can launch this with `npm run styleguide`
 
 ## Timeline
-I started the set up this application on Thursday 17th January, 2019 but unfortunately due to work commitments I was only able to start properly on Friday 18th. I completed it on Monday 21st of January, 2019. Listed below are things are will still be working on.
+I started the set up this application on Thursday 17th January, 2019 but unfortunately due to work commitments I was only able to start properly on Friday 18th. I completed it on Monday 21st of January, 2019. Listed below, are things I would like to improve and will still be working on.
 
 ## What would I do with More Time
 - I would have implemented more tests
-- I would have abstracted all the code on the `HomePage.jsx` dealing with state
+- I would have abstracted all the code in the `HomePage.jsx` dealing with state
 - I really need to implement pagination
+- The Select Option would be split into Atoms
+
+*I am using Atomic Design Principles In my code as I feel it is the best way I have come accross to abstract logic from a React Application*
