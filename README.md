@@ -60,5 +60,6 @@ I started the set up this application on Thursday 17th January, 2019 but unfortu
 - I would have abstracted all the code in the `HomePage.jsx` dealing with state
 - I really need to implement pagination
 - The Select Option would be split into Atoms
+- After some research I found that to optimise the call to the API so it doesn't get called unecessarily when updates happen. I need to use useMemo.
 
 *I am using Atomic Design Principles In my code as I feel it is the best way I have come accross to abstract logic from a React Application*
