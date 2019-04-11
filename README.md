@@ -1,6 +1,8 @@
 
 ## README file Instructions
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/benfluleck/beth-in-froopyland.svg)](https://greenkeeper.io/)
+
 - How to run the project?
 - How long did it take you to finish it?
 - What would you have done if time permitted?
